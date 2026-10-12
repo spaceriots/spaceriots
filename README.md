@@ -1,7 +1,6 @@
-This is the Space Riots — Space Launches, Missions & Live Updates.
+Space is happening. Stay informed.
 
 # Space Riots
-Track upcoming space launches, missions, satellite launches, countdowns, and important space events with Space Riots.
+Discover upcoming rocket launches, explore space missions, follow countdowns, and stay up to date with the latest happenings in space exploration.
 
-### Contact
 🌐 [spaceriots.com](https://spaceriots.com)
