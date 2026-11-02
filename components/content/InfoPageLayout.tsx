@@ -14,7 +14,7 @@ export default function InfoPageLayout({
   children,
 }: InfoPageLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <header className="mb-10 border-b border-white/10 pb-8 sm:mb-12 sm:pb-10">
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-red-400">
           {eyebrow}
