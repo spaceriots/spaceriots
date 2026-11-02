@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Space Riots",
-  title: "Space Riots — Space Launches, Missions & Live Updates",
+  title: "Space Riots — Space Events, Exploration & Technology",
   description:
-    "Track upcoming space launches, missions, satellite launches, countdowns, and important space events with Space Riots.",
-  url: "https://spaceriots.com",
+    "Explore space events, rocket launches, exploration missions, astronomy, satellites, and the technologies shaping the future of space.",
+  url: "https://www.spaceriots.com",
   language: "en",
   locale: "en_US",
 } as const;

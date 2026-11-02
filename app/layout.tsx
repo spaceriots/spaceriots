@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-
-  authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
 
@@ -50,6 +48,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
+    url: siteConfig.url,
     locale: siteConfig.locale,
   },
 
@@ -73,8 +72,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
-      <body>
+    <html
+      lang={siteConfig.language}
+      className={`${inter.variable} ${dmMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body className="flex min-h-dvh flex-col">
         <Header />
         {children}
         <Footer />
