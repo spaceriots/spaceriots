@@ -27,10 +27,17 @@ export const metadata: Metadata = {
     default: siteConfig.title,
     template: "%s | Space Riots",
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
   creator: siteConfig.name,
   publisher: siteConfig.name,
+
+  // Google AdSense site ownership verification
+  other: {
+    "google-adsense-account": "ca-pub-9399028048669354",
+  },
 
   robots: {
     index: true,
@@ -79,6 +86,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="flex min-h-dvh flex-col">
+        {/* Google AdSense */}
         <Script
           id="google-adsense"
           async
@@ -88,7 +96,9 @@ export default function RootLayout({
         />
 
         <Header />
+
         {children}
+
         <Footer />
       </body>
     </html>
