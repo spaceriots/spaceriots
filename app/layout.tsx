@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { DM_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 import { siteConfig } from "@/data/site";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,8 +29,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-
-  authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
 
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
+    url: siteConfig.url,
     locale: siteConfig.locale,
   },
 
@@ -71,8 +73,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
-      <body>{children}</body>
+    <html
+      lang={siteConfig.language}
+      className={`${inter.variable} ${dmMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body className="flex min-h-dvh flex-col">
+        <Script
+          id="google-adsense"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9399028048669354"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
