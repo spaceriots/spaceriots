@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { siteConfig } from "@/data/site";
 import EclipseCountdown from "@/components/home/EclipseCountdown";
+import SpaceVote from "@/components/home/SpaceVote";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -33,8 +34,8 @@ export default function HomePage() {
         }}
       />
 
+      {/* Hero Section */}
       <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-[#050608] lg:min-h-[calc(100svh-4.5rem)]">
-        {/* Hero image */}
         <Image
           src="/images/solar-eclipse-2027.webp"
           alt="The Sun's bright corona surrounding the Moon during a total solar eclipse"
@@ -44,19 +45,16 @@ export default function HomePage() {
           className="object-cover object-[center_40%] sm:object-center"
         />
 
-        {/* Darken the image for readable text */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-[#050608]/60"
         />
 
-        {/* Fade smoothly into the page background */}
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-linear-to-b from-[#050608]/30 via-[#050608]/35 to-[#050608]"
         />
 
-        {/* Hero content */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-5 py-10 text-center sm:px-6 sm:py-12">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent sm:text-sm">
             Future Event: Solar Eclipse
@@ -74,29 +72,38 @@ export default function HomePage() {
           <EclipseCountdown />
 
           <div className="mt-8 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:gap-5">
-              <time dateTime="2027-08-02T07:30:11Z">
-                Monday, August 2, 2027
-              </time>
+            <time dateTime="2027-08-02T07:30:11Z">
+              Monday, August 2, 2027
+            </time>
 
-              <span className="hidden text-white/85 sm:inline" aria-hidden="true">
-                /
+            <span
+              className="hidden text-white/85 sm:inline"
+              aria-hidden="true"
+            >
+              /
+            </span>
+
+            <span>
+              07:30:11 UTC · Global partial eclipse begins
+            </span>
+          </div>
+
+          <div className="mt-9">
+            <Link
+              href="/total-solar-eclipse-2027"
+              className="inline-flex min-h-11 items-center justify-center border border-white/20 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
+            >
+              Explore the eclipse
+              <span className="ml-3" aria-hidden="true">
+                →
               </span>
-
-              <span>07:30:11 UTC · Global partial eclipse begins</span>
-            </div>
-            <div className="mt-9">
-              <Link
-                href="/total-solar-eclipse-2027"
-                className="inline-flex min-h-11 items-center justify-center border border-white/20 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
-              >
-                Explore the eclipse
-                <span className="ml-3" aria-hidden="true">
-                  →
-                </span>
-              </Link>
-            </div>
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* Community Voting Section */}
+      <SpaceVote />
     </main>
   );
 }
